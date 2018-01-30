@@ -7,11 +7,14 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var appRoutes = require('./routes/app');
-var messageRoutes = require('./routes/messages');
+
 var userRoutes = require('./routes/user');
 
+
 var app = express();
-mongoose.connect('localhost:27017/node-angular');
+
+
+mongoose.connect(mongodbUri);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +35,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use('/message', messageRoutes);
+
 app.use('/user', userRoutes);
 app.use('/', appRoutes);
 

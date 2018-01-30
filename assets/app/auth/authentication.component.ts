@@ -5,17 +5,18 @@ import { AuthService } from "./auth.service";
     selector: 'app-authentication',
     template: `
         <header class="row spacing">
+            <div class="row spacing">
+                <router-outlet></router-outlet>
+            </div>
             <nav class="col-md-8 col-md-offset-2">
-                <ul class="nav nav-tabs">
-                    <li routerLinkActive="active"><a [routerLink]="['signup']">Signup</a></li>
-                    <li routerLinkActive="active" *ngIf="!isLoggedIn()"><a [routerLink]="['signin']">Signin</a></li>
-                    <li routerLinkActive="active" *ngIf="isLoggedIn()"><a [routerLink]="['logout']">Logout</a></li>
-                </ul>
+               
+                    <p routerLinkActive="active"><a [routerLink]="['signup']">Signup</a></p>
+                    <p routerLinkActive="active" ><a [routerLink]="['signin']">Signin</a></p>
+                    
+                
             </nav>
         </header>
-        <div class="row spacing">
-           <router-outlet></router-outlet>
-        </div>
+        
     `
 })
 export class AuthenticationComponent {

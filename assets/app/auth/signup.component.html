@@ -1,40 +1,103 @@
 <div class="col-md-8 col-md-offset-2">
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input
-                    type="text"
-                    id="firstName"
-                    class="form-control"
-                    formControlName="firstName">
-        </div>
-        <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input
-                    type="text"
-                    id="lastName"
-                    class="form-control"
-                    formControlName="lastName">
-        </div>
-        <div class="form-group">
-            <label for="email">Mail</label>
-            <input
+    <h4> Sign up with your email address</h4>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" >
+
+
+        <div class="form-group row">
+             <input
                     type="email"
                     id="email"
                     class="form-control"
-                    formControlName="email">
+                    formControlName="email" placeholder="Email">
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input
+        <div class="form-group row">
+             <input
                     type="password"
                     id="password"
                     class="form-control"
-                    formControlName="password">
+                    formControlName="password" placeholder="Password">
         </div>
+        <div class="form-group row">
+            <input
+                    type="text"
+                    id="userName"
+                    class="form-control"
+                    formControlName="userName" placeholder="Username">
+        </div>
+
+        <label for="dob" style="color:#555; font-weight: lighter">Date Of Birth</label>
+        <div  id="dob" class="form-group row"  >
+
+            <select id='month' formControlName="month" class="form-control"  style="float:left;margin-right:15px; width:150px">
+                <option value='Janaury'>Janaury</option>
+                <option value='February'>February</option>
+                <option value='March'>March</option>
+                <option value='April'>April</option>
+                <option value='May'>May</option>
+                <option value='June'>June</option>
+                <option value='July'>July</option>
+                <option value='August'>August</option>
+                <option value='September'>September</option>
+                <option value='October'>October</option>
+                <option value='November'>November</option>
+                <option value='December'>December</option>
+            </select>
+
+            <input
+                        type="text"
+                        id="day"
+                        class="form-control"
+                        formControlName="day" placeholder="Day"
+                        style="width:70px;float:left;margin-right:15px;">
+
+            <input
+                        type="text"
+                        id="year"
+                        class="form-control"
+                        formControlName="year" placeholder="Year" style="width:100px;float:left;margin-right:15px;">
+
+        </div>
+
+
+
+        <div class="form-group row "  >
+            <div class="radio-inline">
+                <label class="md-check"  style="color:#555; font-weight: lighter" >
+                    <input formControlName="gender" type="radio" value="male" name="gender">Male</label>
+            </div>
+            <div class="radio-inline">
+                <label class="md-check" style="color:#555; font-weight: lighter">
+                    <input formControlName="gender" type="radio" value="female" name="gender">Female</label>
+            </div>
+
+        </div>
+
+        <div class="form-group row " >
+            <select id='country' formControlName="country" class="form-control" style="float:left;margin-right:15px; width:150px">
+                <option value=''>Country</option>
+                <option value='Australia'>Australia</option>
+                <option value='Canada'>Canada</option>
+                <option value='Chile'>Chile</option>
+                <option value='Egypt'>Egypt</option>
+                <option value='Germany'>Germany</option>
+                <option value='Greenland'>Greenland</option>
+                <option value='India'>India</option>
+                <option value='Ireland'>Ireland</option>
+                <option value='Japan'>Japan</option>
+                <option value='Mexico'>Mexico</option>
+                <option value='Norway'>Norway</option>
+                <option value='United States'>United States</option>
+            </select>
+        </div>
+
+
         <button
-                class="btn btn-primary"
+                class="btn btn-primary row"
                 type="submit"
-                [disabled]="!myForm.valid">Submit</button>
+               >SIGN UP</button>
+
     </form>
+
+
+
 </div>
